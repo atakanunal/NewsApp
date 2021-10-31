@@ -7,5 +7,5 @@
 - Retrofit
 - Room Database
 - Data Binding
-- Navigation Component
+- Navigation Components
 - Glide
