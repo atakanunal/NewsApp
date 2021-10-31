@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/news_nav_graph"
+    app:startDestination="@id/breakingNewsFragment">
+    <argument
+        android:name="title"
+        android:defaultValue="0" />
+    <argument
+        android:name="description"
+        android:defaultValue="0" />
+    <argument
+        android:name="url"
+        android:defaultValue="0" />
+    <argument
+        android:name="urlimage"
+        android:defaultValue="0" />
+    <fragment
+        android:id="@+id/breakingNewsFragment"
+        android:name="com.example.aaa.xxx.newsapp.fragments.BreakingNewsFragment"
+        android:label="BreakingNewsFragment" >
+        <action
+            android:id="@+id/action_breakingNewsFragment2_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.example.aaa.xxx.newsapp.fragments.DetailFragment"
+        android:label="DetailFragment" >
+        <action
+            android:id="@+id/action_detailFragment_to_webFragment"
+            app:destination="@id/webFragment" />
+        <argument
+            android:name="title"
+            app:argType="string" />
+        <argument
+            android:name="description"
+            app:argType="string" />
+        <argument
+            android:name="article"
+            app:argType="com.example.aaa.xxx.newsapp.model.Article" />
+        <argument
+            android:name="urlimage"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/savedNewsFragment"
+        android:name="com.example.aaa.xxx.newsapp.fragments.SavedNewsFragment"
+        android:label="SavedNewsFragment" >
+        <action
+            android:id="@+id/action_savedNewsFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/webFragment"
+        android:name="com.example.aaa.xxx.newsapp.fragments.WebFragment"
+        android:label="WebFragment" >
+        <argument
+            android:name="article"
+            app:argType="com.example.aaa.xxx.newsapp.model.Article" />
+    </fragment>
+</navigation>
